@@ -177,10 +177,34 @@ arrowUp.addEventListener('click', function(){
     $('html').animate({scrollTop: 0}, 600);
 });
 
-$( function() {
-    $("#datepicker").datepicker();
-  } );
 
+//form modal
+Data = new Date();
+year = Data.getFullYear();
+month = "0" + (Data.getMonth() + 1);
+day = Data.getDate();
+fulldate = year + "-" + month + "-" + day;
+document.getElementById('calendar').setAttribute('min', fulldate);
+
+
+    $('.formButton').click(function(){
+        var auto = $('#auto').val();
+        var phone = $('#phone').val();
+        var data = $('#calendar').val();
+        $.ajax({
+            url: "/send.php", 
+            type: "post", 
+            data: { 
+                "auto":   auto,
+                "phone":  phone,
+                "data": data
+            },
+            success: function(data){
+                $('.modal-body').html(data.result);
+                
+            }
+        });
+    });
 
 
 });

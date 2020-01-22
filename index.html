@@ -20,11 +20,7 @@
         <script src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script src="src/script.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="js/jqui/jquery-ui.min.css">
-        <link rel="stylesheet" href="js/jqui/jquery-ui.theme.min.css">
-        <link rel="stylesheet" href="js/jqui/jquery-ui.structure.min.css">
-        <script src="js/jqui/jquery-ui.min.js"></script>
-        <script src="js/jqui/jquery.js"></script>
+       
         
     </head>
     <body>
@@ -185,20 +181,30 @@
                     <!--Модальное окно-->
                     <section class="modalwindow">
                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                              <div class="modal-content modalForm">
+                            <div class="modal-dialog  modal-dialog-centered" role="document">
+                              <div class="modal-content modalForm modalfon" >
                                 <div class="modal-header">
-                                  <h5 class="modal-title text-center id="exampleModalLongTitle">Выберите день и время на которое хотели бы записаться</h5>
+                                  <h5 class="modal-title text-center id="exampleModalLongTitle">Выберите день и время на которое хотели бы записаться и наш менеджер с Вами свяжется</h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
                                 <div class="modal-body">
-                                    <div id="datepicker"></div>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                                  <button type="button" class="btn btn-primary">Отправить</button>
+                                    <div id="dateMonthTime mx-auto text-center">
+                                        <div class="form-group ">
+                                            <form action="" method="POST">
+                                                <p class="text-center">Укажите марку и модель автомобиля:
+                                                <input class="auto" type="text" name="auto" id="auto" size="60" value="" placeholder="Марка авто"></p>
+                                                <p>Ваш телефон:                                                
+                                                <span class="seven">+7 </span><input id="phone" name="phone" class="tel" value="" type="text" size="18" maxlength="10" required pattern="[0-9]{10}" placeholder="Номер телефона"></p>
+                                                <p>Выберите дату: <input class="date" id="calendar" type="date" value="" name="calendar" ></p>             
+                                                <div class="modal-footer text-center">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                                                    <button type="submit" class="formButton btn btn-primary">Отправить</button>
+                                                </div>
+                                            </form> 
+                                        </div>     
+                                    </div>
                                 </div>
                               </div>
                             </div>
@@ -213,9 +219,9 @@
             
         </div>      
         
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.js"><\/script>')</script>
-        <script src="js/main.js"></script>
+        <script src="js/main.js"></script> -->
 
     </body>
 </html>

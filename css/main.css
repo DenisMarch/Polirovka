@@ -425,3 +425,12 @@ body{
 #map {
   height: 300px;
 }
+
+.modalfon{
+  background: url(/img/fon/grind.png);
+  color: white; 
+}
+
+.seven{margin-left: 17px;}
+.date{margin-left: 29px;}
+
