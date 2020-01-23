@@ -32,9 +32,32 @@ body{
 }
 
 
-/* Small devices (landscape phones, 544px and up) */
-@media (max-width: 575px) {  
+
+@media (min-width: 220px) and (max-width: 349px){  
+  .name_site {font-size: 30px;}
+  .adress{font-size: 1em; }
+  .n_s{text-align: center;}  
+  .header {height: 150px; }   
+  .arrow-up {left: 83%; opacity: 0.3;}
+  .menu{display: none;}
+  .icon-home::before, .icon-work::before, .icon-phone::before{display: none;}
+  .page1 h2{font-size: 25px;}
+  .price_polish p {font-size: 15px;}
+  section {width:100%;}
+  .auto{width: 300px;}
+  .error{width: 300px;font-size: 38px;}
+  .cont{font-size: 14px;}
+}
+
+ @media (min-width: 350px) and (max-width: 575px) {  
   .name_site {font-size: 38px;}
+  .icon-phone{
+    -webkit-animation-name: home-min;
+    animation-name: home-min;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
   .n_s{text-align: center;}  
   .header {height: 150px; }   
   .arrow-up {left: 83%; opacity: 0.3;}
@@ -43,8 +66,20 @@ body{
   .page1 h2{font-size: 25px;}
   .price_polish p {font-size: 18px;}
   section {width:100%;}
+  .auto{width: 250px;}
+  .error{width: 300px;font-size: 38px;}
+
+} 
+
+@keyframes home-min{
+  0%{color:gray;}
+  20%{color: lightslategray;}
+  50%{color:darkgray;}
+  75%{color:slategrey;}
+  100%{color:gray}
 }
 
+/* Small devices (landscape phones, 544px and up) */
 @media (min-width: 576px) {  
     .name_site {font-size: 50px;}
     .header { height: 150px; } 
@@ -126,10 +161,12 @@ body{
 
 .icon-phone{
   cursor: pointer;
+  transition-duration: 0.8s;
 }
 
 .icon-home{
   cursor: pointer;
+  transition-duration: 0.8s;
 }
 
 .icon-home::before{
@@ -140,7 +177,7 @@ body{
   height: 23px;
   background: url(/img/icon-home.png) no-repeat center;
   background-size: contain;
-  margin-top: -5px;
+  margin-top: -5px; 
 }
 
 .icon-work::before{
@@ -164,6 +201,43 @@ body{
   background-size: contain;
   margin-top: -5px;
 }
+
+/*animation icons*/
+.icon-home:hover::before{
+  -webkit-animation-name: iconhome;
+          animation-name: iconhome;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+}
+
+.icon-phone:hover::before{
+  -webkit-animation-name: iconphone;
+          animation-name: iconphone;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+          animation-iteration-count: infinite;
+}
+
+@keyframes iconhome{
+  0%{transform: scale(1);}
+  50%{transform: scale(1.3); }
+  100% {transform: scale(1); }
+}
+
+@keyframes iconphone{
+  0%{transform: rotate(0) translateX(0);}
+  50%{
+    transform: translateX(-2px);
+    
+  }
+  100% {transform: translateX(2px); }
+}
+
+.icon-phone:hover, .icon-home:hover{
+  color: white;
+}
+
 
 .row .p{
  font-family: 'Tahoma', sans-serif;
@@ -424,13 +498,56 @@ body{
 
 #map {
   height: 300px;
+  margin-top: 10px;
 }
 
 .modalfon{
   background: url(/img/fon/grind.png);
   color: white; 
+ 
 }
 
-.seven{margin-left: 17px;}
-.date{margin-left: 29px;}
+.modal-text{
+  line-height: 0.3;
+}
 
+#auto, #phone{
+  background: rgba(63, 52, 94, 0.75);
+  border: none;
+  color: white;
+}
+
+.footer-modal{
+  padding-top: 20px;
+}
+
+.error{
+  display: none;
+  color: red;
+  width: 430px;
+  height: 236px;
+  background-color: rgba(50, 50, 50, 0.75);
+  font-size: 38px;
+}
+.error-button{
+  margin-top: 50px;
+}
+
+.sucess-mail{
+  display: none;
+  color: orange;
+  background-color: rgba(50, 50, 50, 0.75);
+  font-size: 28px;
+}
+
+#contacts button{
+  padding: 5px;
+  border-radius: 10px;
+  background-color: teal;
+  transition-duration: 1s;
+
+}
+
+#contacts button:hover{
+  background-color:tomato;
+}

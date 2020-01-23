@@ -141,6 +141,13 @@ function showSlides(n){
     dot[numSlider-1].classList.add('d-active'); 
 }
 
+// $('.slider').click(function(event){
+//     if (event.target.classList.contains('img-fluid')) {
+        
+//         event.target.style.width = "2000px";
+//     }
+// });
+
 arrowR.addEventListener('click', function(){
     dot[numSlider-1].classList.remove('d-active');
     showSlides(numSlider+=1);
@@ -165,12 +172,17 @@ showSlides(numSlider);
 
 //back up
 let y = document.documentElement.clientHeight,
-    arrowUp = document.querySelector('.arrow-up');
+    arrowUp = document.querySelector('.arrow-up'),
+    modal = 0;
 
 $(window).scroll(function(){
     if ($(window).scrollTop()>y) 
        arrowUp.style.display = 'block'; 
        else arrowUp.style.display = 'none'; 
+    if ($(window).scrollTop() >= document.documentElement.scrollHeight-document.documentElement.clientHeight-300 && modal == 0) {
+        $('#exampleModalCenter').modal('show'); 
+        modal = 1;
+    }
 });
 
 arrowUp.addEventListener('click', function(){
@@ -186,25 +198,49 @@ day = Data.getDate();
 fulldate = year + "-" + month + "-" + day;
 document.getElementById('calendar').setAttribute('min', fulldate);
 
+let modal_sos = 0;
 
-    $('.formButton').click(function(){
-        var auto = $('#auto').val();
-        var phone = $('#phone').val();
-        var data = $('#calendar').val();
-        $.ajax({
-            url: "/send.php", 
-            type: "post", 
-            data: { 
-                "auto":   auto,
-                "phone":  phone,
-                "data": data
-            },
-            success: function(data){
-                $('.modal-body').html(data.result);
-                
-            }
-        });
-    });
+$('.close').click(function(){
+    if (modal_sos == 1) {
+        $('.sucess-mail').hide();
+        $('.error').hide(); 
+        $('.obratka').show(); }    
+});
+
+$('.error-button').click(function(){  
+        $('.error').hide(); 
+        $('.obratka').show();
+        modal_sos = 0; 
+});
+
+$('#my_form').submit(function(event){
+    event.preventDefault();
+    $.post(
+        '/send.php', 
+        $('#my_form').serialize(),       
+        
+        function(data) {
+            //$('.obratka').hide();
+        }
+    ).done(function() {
+    		modal_sos = 2;  
+        	$('.obratka').fadeToggle('slow',
+           function(){ $('.sucess-mail').show(); });
+           }
+    ).fail(function() {
+    		modal_sos = 1;
+    	    $('.obratka').fadeToggle('slow', 
+    	   function(){ $('.error').show(); });
+    	   }
+	);
+});
+
+//contacts button
+$('.buttonCon').click(function(){
+    $('#exampleModalCenter').modal('show'); 
+});
+
+
 
 
 });
