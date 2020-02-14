@@ -724,7 +724,7 @@ footer{
 }
 
 .div-us.hidden{
-  margin-top:100%;
+  margin-top:200%;
   visibility: hidden;
 }
 
@@ -843,7 +843,7 @@ footer{
   transition-duration: 1s;
 }
 
-.obertka:nth-child(3){
+.obertka{
   margin-top: 16px;
 }
 .obertka input:focus{
@@ -924,6 +924,7 @@ input:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-ind
   z-index: 99999;}
 .copyright{ z-index: 99999;}
 
+
 /*рассчет цены работ*/
 .cast{
   position: fixed;
@@ -953,64 +954,131 @@ input:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-ind
 }
 .cast:hover {right: -8px;}
 .window-cast{
-  -webkit-box-shadow: 1px 1px 12px 2px rgba(50, 50, 50, 0.59);
-  -moz-box-shadow:    1px 1px 12px 2px rgba(50, 50, 50, 0.59);
-  box-shadow:         1px 1px 12px 2px rgba(50, 50, 50, 0.59);
+  -webkit-box-shadow: 1px 1px 12px 2px rgba(94, 92, 92, 0.59);
+  -moz-box-shadow:    1px 1px 12px 2px rgba(94, 92, 92, 0.59);
+  box-shadow:         1px 1px 12px 2px rgba(94, 92, 92, 0.59);
   top:50%;
   left:50%;
   transform:translate(-50%, -50%);
   position: fixed;
-  width: 800px;
-  height: 600px;
-  z-index: 99999999999;
+  width: 600px;
+  height: 400px;
+  z-index: 999999999;
   overflow: hidden;
-  background-color: white;
+  background-color: #3B4656;
+  display: none;
+  opacity: 1;
 }
+.wrapp{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+	top: 0;
+  opacity: 0.7;
+  background: #000;
+  display: none;
+}
+
+.fa-times{
+cursor: pointer;
+position: absolute;
+right: 5px;
+top: 0;
+font-size: 30px;
+}
+
 .title-cast{
-  margin-top: 30px;
-  font-size: 50px;
-  font-family: 'Poiret One', cursive;
+  font-size: 40px;
+  color: white;  
 }
-.auto-select{
+.title-cast::after{
+  content: "";
+  top: 86px;
+  left: 25%;
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: greenyellow;
+}
+
+.title-what, .what-auto, .title-dirt, .title-polish {
+  color:orange;
+  margin-top: 40px;
+}
+
+.auto-select, .what-dirt, .what-polish, .itog{display: none;}
+
+.auto-select, .what-work, .what-dirt, .what-polish{
   font-size: 30px;
-  margin-top: 30px;
-  
+  margin-top: -20px;
+}
+.itog{
+  font-size: 30px;
+  margin-top: 70px;
+}
+
+.select-box p{cursor: pointer; color: white;}
+.select-box li{color: white;
+  cursor: pointer;
+  font-size: 20px;
 }
 .select-box{
   position: absolute;
   top:50%;
   left:50%;
   transform:translate(-50%, -50%);
-  
+  margin-top: 30px;
 }
 .jeep, .light{
   cursor: pointer;
   transition-duration: 0.3s;
 }
-.jeep:hover, .light:hover{
+.jeep:hover, .light:hover, .select-box li:hover, .select-box p:hover{
   font-weight: bold;
-  color: red;
+  color: orange;
 }
-.jeep-select{
+.jeep-select, .light-select{
   display: none;
-  width: 200px;
+  width: 500px;
   margin-left: 1000px;
+  cursor: pointer;
 }
+.jeep-select img, .light-select img{margin-left: 20px; width: 120px;}
+
 .money-add{
 position: absolute;
 bottom: 0;
-left: 140px;
+left: 200px;
 font-size: 30px;
-font-family: 'Poiret One', cursive;
+color: greenyellow;
 }
 
+.itog p{
+  color: orange;
+}
 
+.summa-itog{
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 45px;
+}
 
-
-
-
-
-
+.itog button{
+  background-color: #175081;
+  border-radius: 10px;
+  color: white;
+}
+.itog button:hover{background-color: #00aced;}
+.buttonclose{
+  visibility: hidden;
+}
+.window-cast i{
+  color:white;
+  visibility: visible;
+  transition-duration: 1s;}
+.window-cast i:hover {
+  transform: rotate(180deg);}
 
 /*медиа*/
 @media (min-width: 220px) and (max-width: 349px){
@@ -1020,7 +1088,7 @@ font-family: 'Poiret One', cursive;
   .header {height: 100px; }
   .arrow-up {left: 83%; opacity: 0.3;}
   .menu{display: none;}
-  .ll:after, .ll:before{left: 0;}
+  .ll:after, .ll:before{left: 0;left: 15px;}
   .ll0{height: 190px;}
   .page1 h3{font-size: 16px; margin-top: 48px;}
   .title-examples h2{font-size: 20px;}
@@ -1034,7 +1102,16 @@ font-family: 'Poiret One', cursive;
   .modal-header h5{font-size: 15px;}
   .error{width: 300px;font-size: 38px;}
   .cont{font-size: 14px;}
-  
+  /*calculator*/
+  .window-cast{width: 300px;height: 300px;}
+  .auto-select, .what-work, .what-dirt, .what-polish{font-size: 20px;}
+  .title-cast::after{top: 66px;}
+  .money-add{font-size: 25px;left:20%;}
+  .jeep-select img, .light-select img{width:60px}
+  .select-box li {font-size: 15px;}
+  .itog{margin-top: 40px;}
+  .itog p, .fa-times, .title-cast{font-size: 25px;}
+  .fus.active{height: 400px !important;}
 }
 
  @media (min-width: 350px) and (max-width: 575px) {
@@ -1059,18 +1136,29 @@ font-family: 'Poiret One', cursive;
   .title-footer{height: 200px;}
   .title-footer:last-child a::after{display: none;}
   .title-footer:not(:last-child)::before{display: block;}
-  .fus.active{height: 400px;}
+  .fus.active{height: 400px !important;}
   .find-us{top: -440%;bottom: 15%; left:19%;}
-  .find-us.active {top: 12%;  background-color: rgb(32, 32, 44); }
+  .find-us.active {top: 12%; left:17%;  }
+  /*calculator*/
+  .window-cast{width: 350px;height: 350px;}
+  .auto-select, .what-work, .what-dirt, .what-polish{font-size: 24px;}
+  .title-cast::after{top: 66px;}
+  .money-add{font-size: 25px;left:20%;}
+  .jeep-select img, .light-select img{width:80px}
+  .select-box li {width: 250px;font-size: 18px;}
+  .itog{margin-top: 40px;}
+  .itog p, .fa-times, .title-cast{font-size: 27px;}
 }
 @media (width: 375px) {
-  .slogan{font-size: 18px; top: 40px;  }
-  .page1 h3{font-size: 21px; margin-top: 131px;}
+  .slogan{font-size: 18px; top: 40px; left: 12%;  }
+  .page1 h3{font-size: 21px; margin-top: 70px;}
+  
 }
 
 @media (width: 414px) {
   .slogan{font-size: 18px; top: 40px; left:63px; }
-  .page1 h3{font-size: 21px; margin-top: 101px;}
+  .page1 h3{font-size: 21px; margin-top: 80px;}
+  .find-us.active {height:400px;font-size:27px;top:50%; left:50%; transform: translate(-50%, -50%);  }
 }
 
 @keyframes home-min{
@@ -1099,24 +1187,74 @@ font-family: 'Poiret One', cursive;
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px){
-  .name_site {font-size: 55px;}
-  .menu{display: block;}
-  .n_s{text-align: left;}
+  .name_site {font-size: 55px;}.content-line::after{margin-left: 35px;}
+  .menu{display: none;}  .ll::after, .ll::before{left: 15px; z-index: 1;}
+  .n_s{text-align: left;}.slogan{font-size: 20px; margin-top:-40px;}.slogan{z-index: 100;}
+  .block-footer{height: 300px;}
+  .title-footer{font-size: 20px;}
+  i{font-size: 16px;} .qq {width: 1200px !important; margin-left: 2px !important;}
+  .text_{font-size: 14px;}
+  .footer-icons a{width: 30px;height: 30px;}
+  .title-footer::after{top:100px;}
+  .find-us{top: 100%;left: 25px;}
+  .find-us.active {top: 15%;font-size: 17px; left: 25px; background-color: rgb(32, 32, 44);}
 }
 @media (width: 812px) {
   .slogan{font-size: 20px; left: 20px; top:60px;}
   .page1 h3{font-size: 21px; margin-top: -138px;}
   .title-examples h2{margin-top: -95px;font-size: 28px;}
   .menu{display: none;} 
-
 }
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199px){
-    .name_site {font-size: 65px;}
+    .name_site {font-size: 65px;}.menu{display: none;} 
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .name_site {font-size: 80px;}
 }
+
+@media (width: 667px) and (orientation: landscape) {
+  .ll::before{left: 15px; z-index: 1;}
+  .ll{ margin-top: 30px;}
+  .ll::after{left: 15px; }
+  .slogan{z-index: 100;}
+  .page1 h3{margin-top: 60px;}
+  .title-examples h2{margin-top: 20px;}
+}
+@media (width: 568px) and (orientation: landscape) and (max-width: 700px){
+  .slogan{margin-left: 80px;}
+}
+@media (width: 736px) and (orientation: landscape) {
+  .slogan{margin-left: 80px;}
+  .slogan{z-index: 100;}
+  .ll::after, .ll::before{left: 15px; z-index: 1;}
+  .page1 h3{margin-top: 80px;}
+  .title-examples h2{margin-top: 20px;}
+  .title-footer{height: 400px;}
+  .find-us{top: -440%;bottom: 15%; left:32%;}
+  .find-us.active {top: 12%;  background-color: rgb(32, 32, 44); }
+  .content-line::after{margin-left: 35px;}
+  .optic, .kuz, .abraziv{text-align: center !important; }
+}
+@media (width: 812px) and (orientation: landscape) {
+  .slogan{font-size: 20px;}
+  .page1 h3{font-size: 21px; margin-top: -138px;}
+  .title-examples h2{margin-top: -95px;font-size: 28px;}
+  .menu{display: none;} 
+  .ll::after, .ll::before{left: 15px; z-index: 1;}
+  .page1 h3{margin-top: 80px;}
+  .title-examples h2{margin-top: 20px;}
+  .qq {width: 1200px !important; margin-left: 2px !important;}
+  .text_{font-size: 14px;}
+  .block-footer{height: 300px;}
+  .title-footer{font-size: 20px;}
+  i{font-size: 16px;}
+  .footer-icons a{width: 30px;height: 30px;}
+  .title-footer::after{top:100px;}
+  .find-us{top: 100%;left: 25px;}
+  .find-us.active {top: 15%;font-size: 17px; left: 25px; background-color: rgb(32, 32, 44);}
+}
+
 

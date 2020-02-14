@@ -63,6 +63,7 @@
                     </div>
                 </div>
             </div>
+
             <!--Контент-->
             <div class="content ">     
                 <div class="row">
@@ -72,12 +73,12 @@
      
                     <section class="examples">
                     <!-- block 2 img's -->
-                    <div class=" col-md-8 row mx-auto">
+                    <div class="col-md-8 row mx-auto qq">
                         <!-- 1 img -->
                         <div class="col text-center hover-image-1 one-pict">
                             <img src="img/fara.png" class="shadow_pic text-center img-fluid fara" alt="пожелтевшие фары">
                             <a href="img/fara-big.png" class='open-modal' data-modal="#modal1"><i class="fa fa-search"></i></a>
-                            <img src="img/111.gif" class=" img-fluid bin"  alt="">                                                     
+                            <img src="img/1112.gif" class=" img-fluid bin"  alt="">                                                     
                         </div>
                         <div class="text_ col-md-3 polish">
                             <p><em>Пожелтевшие от времени фары которые мало того что выглядят ужасно, так еще и ухудшают
@@ -94,12 +95,12 @@
                         </div> 
                     </div>
                     <!-- block 2 img's -->
-                    <div class="col-md-8 row mx-auto">
+                    <div class="col-md-8 row mx-auto qq">
                         <!-- 1 img -->
                         <div class="col text-center hover-image-1 three-pict" >
                             <img src="img/blesk.png" class="shadow_pic img-fluid blesk" alt="отполированная машина">
                             <a href="img/blesk-big.jpg" class='open-modal' data-modal="#modal1"><i class="fa fa-search"></i></a>
-                            <img src="img/d.gif" class=" img-fluid di"  alt="">
+                            <img src="img/di.gif" class=" img-fluid di"  alt="">
                         </div>
                         <div class="text_ col-md-3 blesk_text">
                             <p><em>Так же потеря блеска, царапины, следы после мойки, от веток и т.д.</em></p>
@@ -203,30 +204,79 @@
 
 
                     <!-- расчет стоимости -->
+                
                     <div class="cast">
-                        <p>Рассчет цены</p>
+                        <p class="cast-p">Рассчет цены</p>
                     </div>
-                    <div class="window-cast">
-                        <div class="title-cast text-center ">
-                            <p>Рассчет стоимости работ</p>
-                        </div>
-                        <!-- 1 select -->
-                        <div class="auto-select text-center">
-                            <p>Какой у Вас автомобиль?</p>
-                            <div class="select-box">
-                                <p class="jeep">Джип</p>
-                                <div class="jeep-select">
-                                    <p>4 двери</p>
-                                    <p>2 двери</p>
-                                    <p>пикап</p>
+                    <div class="wrapp"></div>
+                    <form id="forms" action="">
+                        <div class="window-cast">
+                            <button class="buttonclose"><i class="fas fa-times"></i></button>
+                            <div class="title-cast text-center ">
+                                <p>Рассчет стоимости работ</p>
+                            </div>
+                            <!-- 1 select -->
+                            <div class="what-work text-center">
+                                <p class="title-what">Какая услуга требуется?</p>
+                                <div class="select-box">
+                                    <p name="servicec" id="p">Полировка</p>
+                                    <p name="servicec" id="h">Химчистка</p>
                                 </div>
-                                <div class="light"><p>Легковой</p></div>
-                            </div>                           
+                            </div>
+                            
+                            <!-- 2 select -->
+                            <div class="auto-select text-center">
+                                <p class="what-auto">Какой у Вас автомобиль?</p>
+                                <div class="select-box">
+                                    <p class="jeep">Джип</p>
+                                    <div class="jeep-select">
+                                        <span><img src="img/005-jeep-1.png" name="autoc" alt="" id="4" title="4 двери"></span> 
+                                        <span><img src="img/004-suv.png"  name="autoc" alt="" id="2" title="2 двери"></span>
+                                        <span><img src="img/003-jeep.png" name="autoc" alt="" id="pikap" title="пикап"></span>
+                                    </div>
+                                <p class="light">Легковой</p>
+                                <div class="light-select">
+                                    <span><img src="img/001-car.png" alt="" name="autoc" id="4dl" title="4 двери"></span> 
+                                    <span><img src="img/002-car.png" alt="" name="autoc" id="2dl" title="2 двери"></span>
+                                    <span><img src="img/003-car.png" alt="" name="autoc" id="univ" title="хэтчбэк/универсал"></span>
+                                </div>
+                                </div>                           
+                            </div>
+
+                            <!--грязь-->
+                            <div class="what-dirt text-center">
+                                <p class="title-dirt">В каком состоянии салон?</p>
+                                <div class="select-box">
+                                    <p id="d">Грязный</p>
+                                    <p id="sd">Очень грязный</p>
+                                </div>
+                            </div>
+                            <!--вид полировки-->
+                            <div class="what-polish text-center">
+                                <p class="title-polish">В каком состоянии кузов?</p>
+                                <div class="select-box text-left">
+                                    <li id="p1">Мало царапин</li>
+                                    <li id="p2">Много царапин</li>
+                                    <li id="p3">Глубокие царапины</li>
+                                    <li id="p4">Подтеки и грязь на краске</li>
+                                </div>
+                            </div>
+                            
+                            <!--подвал-->
+                            <div class="money-add ">
+                                <p class="">Стоимость: <span class="moneyP"></span></p>
+                            </div> 
+
+                            <!-- Итог -->
+                            <div class="itog text-center">
+                                <p>Стоимость услуги составила:</p>
+                                <p name="itog" class="summa-itog"></p>
+                                <button type="submit" class="btn">OK</button>
+                                <button type="button" class="signup_calc btn">Записаться</button>                               
+                            </div>
                         </div>
-                        <div class="money-add">
-                            <p>Стоимость:</p>
-                        </div> 
-                    </div>
+                    </form>
+                    
 
                     <!-- modal image -->
                     <div class='modal0' id='modal1'>
@@ -262,10 +312,10 @@
                                                 </div>
                                                 <div class="obratka">
                                                     <div class="obertka">
-                                                        <input class="auto" autocomplete="off" required type="text" name="auto" id="auto" placeholder="Укажите марку и модель автомобиля:" maxlength="40" size="50" value=""><!--</p>-->
+                                                        <input class="auto" autocomplete="off" required type="text" name="auto" id="auto" placeholder="Укажите марку и модель автомобиля:" maxlength="40" size="50" value=""><!--</spanp>-->
                                                     </div>
                                                     <div class="obertka">
-                                                        <input id="phone" autocomplete="off" name="phone" class="tel " value="" placeholder="Ваш телефон:" type="text" size="50" maxlength="10" required ></p>
+                                                        <input id="phone" autocomplete="off" name="phone" class="tel " value="" placeholder="Ваш телефон:" type="text" size="50" maxlength="10" required ></sp>
                                                     </div>
                                                     <div class="obertka">
                                                         <input autocomplete="off" required class="date " id="calendar" placeholder="Выберите дату:" size="50" maxlength="10" value="" name="date" >  
@@ -280,7 +330,7 @@
                                     </div>
                                 </div>
                               </div>
-                            </.div>
+                            </div>
                         </div>    
                     </section>
                 </div>
@@ -288,10 +338,10 @@
 
             <footer>         
                 <div class=" con1" id="contacts">
-                    <div class="row">
+                    <div class="row block-footer">
                         <div class="col-md-3 title-footer ">
                             <p class="footer-name-firm">Полировка</p>
-                            <p class="down-title-footer ">+79242829882, +79834103020</p>
+                            <p class="down-title-footer ">+79242928892, +79834103020</p>
                             <ul class="footer-icons">
                                 <li><a href="#vk" onclick="window.open('https://vk.com/share.php?url='+ window.location.href +'')"><i class="fab fa-vk"></i></a></li>
                                 <li><a href="#ok" onclick="window.open('https://connect.ok.ru/offer?url='+ window.location.href +'')" class="odn"><i class="fab fa-odnoklassniki"></i></a></li>

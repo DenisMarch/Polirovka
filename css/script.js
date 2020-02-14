@@ -122,7 +122,7 @@ document.getElementById('calendar').setAttribute('min', fulldate);
 
 let modal_sos = 0;
 
-// $("#phone").mask("9 (999) 999-99-99",{autoclear: false, completed:function(){}});
+$("#phone").mask("9 (999) 999-99-99",{autoclear: false, completed:function(){}});
 $("#phone").css("color", "white");
 
 $('.date').focus(function(){
@@ -403,12 +403,12 @@ $('.signup_calc').click(function(event){
     $('.modal').modal('show');
 });
 
-// $('#form').submit(function(event){
-//     event.preventDefault();
-//     $.post(
-//         '/sendcalc.php',
-//         $('#form').serialize());
-// });
+$('#form').submit(function(event){
+    event.preventDefault();
+    $.post(
+        '/sendcalc.php',
+        $('#form').serialize());
+});
 
 
 
